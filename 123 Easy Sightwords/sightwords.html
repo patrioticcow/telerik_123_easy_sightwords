@@ -1,0 +1,92 @@
+<div data-role="page" data-add-back-btn="true" id="sightwords">
+	<div data-role="header" data-position="fixed" data-tap-toggle="false">
+		<h1 id="header_title"></h1>
+		<a href="#topMenu" data-rel="popup" data-icon="gear" class="ui-btn-right">Options</a>
+		<div data-role="popup" id="topMenu">
+			<ul data-role="listview" data-theme="a">
+				<li><a href="index.html">Home</a></li>
+				<li><a href="#" id="reset_slide" >Reset Slide</a></li>
+				<li><a href="#" id="reset_score">Reset Score</a></li>
+				<li><a href="#popupTutorial" data-rel="popup">Tutorial</a></li>
+				<li><a href="about.html">About</a></li>
+			</ul>
+		</div>
+		<hr>
+		<div class="sub_container">
+			<div class="stars">Total Stars <span id="total_points">0</span></div>
+			<div class="containing-element" style="float: right;">
+				<select name="flip-min" id="flip-min" data-role="slider" data-theme="b">
+					<option value="off">Practice On</option>
+					<option value="on">Practice Off</option>
+				</select>
+			</div>
+		</div>
+		<div style="clear: both"></div>
+	</div>
+
+	<div data-role="content" id="sightword_page">
+        <div class="loader loaderr"><img src="img/loading.gif" /></div>
+		<div class="swiper-container">
+			<div class="swiper-wrapper"></div>
+		</div>
+
+		<!-- dialog check word -->
+		<a href="#popupBasics" id="sight_dialog" data-rel="popup"></a>
+		<div data-role="popup" id="popupBasics" data-overlay-theme="a"data-position-to="window">
+			<div data-role="content" data-theme="c" class="ui-corner-bottom ui-content ui-body-d">
+				<h2>Did you say, <span id="see_keyword"></span>?</h2>
+				<button id="prevk" data-role="button" data-inline="true" data-icon="delete">No</button>
+				<button id="nextk" data-role="button" data-inline="true" data-theme="b" data-icon="check">Yes</button>
+			</div>
+		</div>
+
+		<!-- dialog finish -->
+		<a href="#popupFinishs" id="sight_dialog_finish" data-rel="popup"></a>
+		<div data-role="popup" id="popupFinishs" data-overlay-theme="a" data-position-to="window">
+			<div data-role="content" data-theme="c" class="ui-corner-bottom ui-content ui-body-d">
+				<h2>Hurray, you finished all words</h2>
+				<h2>Tap ok to restart</h2>
+				<a href="profile.html" data-role="button" data-theme="c">Ok</a>
+			</div>
+		</div>
+
+		<!-- dialog general -->
+		<a href="#popupGenerals" id="sight_dialog_general" data-rel="popup"></a>
+		<div data-role="popup" id="popupGenerals" data-overlay-theme="a" data-position-to="window">
+			<div data-role="content" data-theme="c"
+				class="ui-corner-bottom ui-content ui-body-d">
+				<h2>Are you Sure</h2>
+				<a href="#" id="tap_yes" data-role="button" data-inline="true" data-rel="back">Yes</a>
+				<a href="#" id="tap_no" data-role="button" data-inline="true" data-rel="back">No</a>
+			</div>
+		</div>
+
+		<!-- dialog tutorial -->
+		<div data-role="popup" id="popupTutorial" data-overlay-theme="a" data-position-to="window">
+			<div data-role="content" data-theme="c" class="ui-corner-bottom ui-content ui-body-d">
+				<h2>Tutorial</h2>
+				<p>1. Say the word out loud.</p>
+				<p>2. Choose in-between Practice Mode On or Off.</p>
+				<p>3. Tap the blue button to verify the word.</p>
+				<a href="#" id="tap_ok" data-role="button" data-rel="back" data-theme="c">Continue</a>
+			</div>
+		</div>
+	</div>
+
+	<div data-role="footer" data-position="fixed" data-tap-toggle="false">
+		<div data-role="navbar" id="practice_off" style="display:none">
+			<ul>
+				<li><button data-corners="false" id="sight_skip" data-theme="a" data-iconpos="top" data-icon="arrow-r ">Skip</button></li>
+				<li><a class="ui-disabled"></a></li>
+				<li><button data-corners="false" id="sight_next" data-theme="b" data-iconpos="top" data-icon="arrow-r">Verify Word</button></li>
+			</ul>
+		</div>
+		<div data-role="navbar" id="practice_on">
+			<ul>
+				<li><button data-corners="false" id="sight_back_on"  data-theme="a" data-iconpos="top" data-icon="arrow-l">Back</button></li>
+				<li><button data-corners="false" id="sight_next_say" data-theme="e" data-iconpos="top" data-icon="refresh">Say Word</button></li>
+				<li><button data-corners="false" id="sight_next_on"  data-theme="a" data-iconpos="top" data-icon="arrow-r">Next</button></li>
+			</ul>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,46 @@
+<div data-role="page" id="add_child">
+	<div data-role="header" data-position="fixed" data-tap-toggle="false">
+		<a href="profile.html" data-rel="back" data-icon="back">Back</a>
+		<h1 id="header_title"></h1>
+		<a href="#topMenu" data-rel="popup" data-icon="gear"
+			class="ui-btn-right">Options</a>
+		<div data-role="popup" id="topMenu">
+			<ul data-role="listview" data-theme="a">
+				<li><a href="index.html">Home</a></li>
+				<li><a href="#" id="logout">Log Out</a></li>
+				<li><a href="about.html">About</a></li>
+			</ul>
+		</div>
+	</div>
+
+	<div data-role="content" id="add_child_page">
+		<div class="ui-li ui-li-divider ui-bar-b ui-corner-top">
+			<h2 style="padding: 0 20px;">Add Child</h2>
+		</div>
+		<div class="white_bg ui-btn-up-c">
+			<form action="/" method="post">
+				<input type="hidden" name="kid_id" id="kid_id" value="" />
+                <input type="hidden" name="user_id" id="user_id" value="" />
+                <input type="text" name="name" id="name" value="" placeholder="Enter child name" />
+                <input type="number" name="age" id="age" value="" placeholder="Enter child age" />
+                <select name="grade" id="grade" multiple="multiple" data-native-menu="false">
+					<option value="0" data-placeholder="true">Select child
+						grade</option>
+					<option value="1">Preschool</option>
+					<option value="2">Kindergarten</option>
+					<option value="4">1st Grade</option>
+				</select> <input type="submit" value="Add Child" data-role="button" />
+			</form>
+		</div>
+		<a href="#popupBasic" id="form_dialog" data-rel="popup"></a>
+		<div data-role="popup" id="popupBasic" data-overlay-theme="a"
+			data-position-to="window">
+			<div data-role="content" data-theme="c"
+				class="ui-corner-bottom ui-content ui-body-d">
+				<pre></pre>
+				<a href="profile.html" data-role="button" data-rel="back" data-theme="c">Ok</a>
+			</div>
+		</div>
+
+	</div>
+</div>

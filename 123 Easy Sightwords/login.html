@@ -1,0 +1,33 @@
+<div id="login" data-role="page" class="theme">
+
+	<div data-role="header" data-position="fixed" data-tap-toggle="false">
+		<a href="profile.html" data-rel="back" data-icon="back" >Back</a>
+		<h1></h1>
+	</div>
+
+	<div data-role="content" id="log_in_page">
+
+		<div class="ui-li ui-li-divider ui-bar-b ui-corner-top">
+			<h2>Log in into your account</h2>
+		</div>
+
+		<div class="white_bg ui-btn-up-c">
+			<form action="/" method="post" id="log_in">
+				<input type="email" name="username" id="username" value="" placeholder="Email" />
+                <input type="password" name="password" id="password" value="" placeholder="Password" />
+                <input type="submit" value="Log In" data-role="button" />
+			</form>
+		</div>
+
+		<a href="#form_login_dialog" id="form_dialog" data-rel="popup"></a>
+		<div data-role="popup" id="form_login_dialog" data-overlay-theme="a" data-position-to="window">
+			<div data-role="content" data-theme="c">
+				<pre style="color: red; font-size: 18px"></pre>
+				<a href="#login_page" id="login_page_id" data-role="button" data-rel="back" data-theme="c" >Ok</a>
+			</div>
+		</div>
+
+	</div>
+
+	<div data-role="footer" data-position="fixed" data-tap-toggle="false"></div>
+</div>

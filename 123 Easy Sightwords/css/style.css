@@ -1,0 +1,32 @@
+.swiper-container { margin : 0 auto; position : relative; overflow : hidden; -webkit-backface-visibility : hidden; -moz-backface-visibility : hidden; -ms-backface-visibility : hidden; -o-backface-visibility : hidden; backface-visibility : hidden; z-index : 1; }
+.swiper-wrapper { position   : relative; width : 100%; -webkit-transition-property : -webkit-transform; -webkit-transition-duration : 0s; -webkit-transform : translate3d(0px, 0, 0); -webkit-transition-timing-function : ease;
+	-moz-transition-property : -moz-transform; -moz-transition-duration : 0s; -moz-transform : translate3d(0px, 0, 0); -moz-transition-timing-function : ease; -o-transition-property : -o-transform; -o-transition-duration : 0s;
+	-o-transform             : translate3d(0px, 0, 0); -o-transition-timing-function : ease; -ms-transition-property : -ms-transform; -ms-transition-duration : 0s; -ms-transform : translate3d(0px, 0, 0); -ms-transition-timing-function : ease;
+	transition-property      : transform; transition-duration : 0s; transform : translate3d(0px, 0, 0); transition-timing-function : ease; }
+.swiper-slide { float : left; -webkit-transform : translate3d(0, 0, 0); -o-transform : translate3d(0, 0, 0); -moz-transform : translate3d(0, 0, 0); -ms-transform : translate3d(0, 0, 0); transform : translate3d(0, 0, 0); }
+.swiper-wp8-horizontal { -ms-touch-action : pan-y; }
+.swiper-wp8-vertical { -ms-touch-action : pan-x; }
+.swiper-container, .swiper-slide { background : #FFFFFF; border-radius : 15px; margin : 0; }
+.ui-page { -webkit-backface-visibility : hidden; background : transparent url('../img/lliella.jpg'); }
+.swiper-container { width : auto; }
+.swiper-slide { text-align : center; text-shadow : none; font-size : 4em; font-weight : bold; }
+.white_bg { background : white; padding : 10px; }
+.stars { float : left; margin : 0 10px; padding : 12px 0; }
+#clock { float : right; margin : 0 10px; }
+.sub_container { padding : 0 10px; }
+#clock { background : red; padding : 0 10px; border-radius : 4px; }
+.padding { padding : 10px }
+.defbg { padding : 10px; margin : 20px 0; }
+#topMenu { z-index : 10; }
+.containing-element .ui-slider-switch { width : 9em; margin : 0; }
+.sub_container { height : 2.6em; }
+.orange { background : #FFAF4B; background : -moz-linear-gradient(top, #FFAF4B 0%, #FF920A 100%);
+	background       : -webkit-gradient(linear, left top, left bottom, color-stop(0%, #FFAF4B), color-stop(100%, #FF920A));
+	background       : -webkit-linear-gradient(top, #FFAF4B 0%, #FF920A 100%);
+	background       : -o-linear-gradient(top, #FFAF4B 0%, #FF920A 100%);
+	background       : -ms-linear-gradient(top, #FFAF4B 0%, #FF920A 100%);
+	background       : linear-gradient(to bottom, #FFAF4B 0%, #FF920A 100%);
+	filter           : progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffaf4b', endColorstr='#ff920a', GradientType=0);
+}
+.banner { text-align : center }
+.loaderr { position : absolute; background : gray; padding : 10px; border-radius : 11px; top : 44%; left : 44%; z-index : 1; }

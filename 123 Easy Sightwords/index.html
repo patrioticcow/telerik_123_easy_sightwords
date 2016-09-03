@@ -1,42 +1,86 @@
-<!DOCTYPE html>
-<!--
-    Licensed to the Apache Software Foundation (ASF) under one
-    or more contributor license agreements.  See the NOTICE file
-    distributed with this work for additional information
-    regarding copyright ownership.  The ASF licenses this file
-    to you under the Apache License, Version 2.0 (the
-    "License"); you may not use this file except in compliance
-    with the License.  You may obtain a copy of the License at
-
-    http://www.apache.org/licenses/LICENSE-2.0
-
-    Unless required by applicable law or agreed to in writing,
-    software distributed under the License is distributed on an
-    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-     KIND, either express or implied.  See the License for the
-    specific language governing permissions and limitations
-    under the License.
--->
+<!DOCTYPE HTML>
 <html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-        <meta name="format-detection" content="telephone=no" />
-        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
-        <link rel="stylesheet" type="text/css" href="css/index.css" />
-        <title>Hello World!</title>
-    </head>
-    <body>
-        <div class="app">
-            <h1>Apache Cordova</h1>
-            <div id="deviceready" class="blink">
-                <p class="event listening">Connecting to Device</p>
-                <p class="event received">Device is Ready</p>
-            </div>
-        </div>
-        <script type="text/javascript" src="cordova.js"></script>
-        <script type="text/javascript" src="js/index.js"></script>
-        <script type="text/javascript">
-            app.initialize();
-        </script>
-    </body>
+<head>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+	<meta id="testViewport" name="viewport" content="user-scalable=yes, initial-scale=1.5, maximum-scale=2, minimum-scale=1, width=device-width"/>
+	<meta name="apple-mobile-web-app-capable" content="yes"/>
+	<meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+	<title>123 Easy SightWords</title>
+	<link rel="stylesheet" href="js/jquery.mobile/jquery.mobile-1.4.5.min.css"/>
+	<link rel="stylesheet" href="css/style.css"/>
+</head>
+<body onload="init();" id="stage" class="theme">
+<div data-role="page" id="index">
+	<div class="index_page" style="display:none;">
+		<div data-role="header" data-position="fixed" data-tap-toggle="false"></div>
+		<h1 id="header_title"></h1>
+		<div data-role="content">
+			<div class="banner orange ui-shadow ui-corner-all ui-bar-b">
+				<h3>123 Easy SightWords</h3>
+				<p>"SightWords made easy"</p>
+			</div>
+			<a href="login.html" data-role="button">Log In</a>
+			<a href="create.html" data-role="button">Create User</a>
+		</div>
+
+		<div data-role="footer" data-position="fixed" data-tap-toggle="false">
+			<h4>&copy; 2013 massinflux.com</h4>
+		</div>
+	</div>
+</div>
+<script type="text/javascript" charset="utf-8" src="js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+<script type="text/javascript">
+	window.addEventListener('load', function () {
+		//FastClick.attach(document.body);
+	}, false);
+
+	if (screen.width < 800) {
+		var mvp = document.getElementById('testViewport');
+		mvp.setAttribute('content', 'user-scalable=yes, initial-scale=1.5, maximum-scale=2, minimum-scale=1, width=device-width, target-densityDpi=180');
+	}
+
+	function init() {
+		document.addEventListener("deviceready", onDeviceReady, true);
+		window.onorientationchange = function () {
+			var val = $(window).height();
+			$(".swiper-container,.swiper-slide").css({width: val});
+		};
+	}
+
+	$(document).on("mobileinit", function () {
+		$.mobile.allowCrossDomainPages             = true;
+		$.mobile.defaultPageTransition             = 'none';
+		$.mobile.page.prototype.options.addBackBtn = true;
+		$.mobile.useFastClick                      = false;
+	});
+
+	function onDeviceReady() {
+		var connection = checkConnection();
+		if (connection === 'UNKNOWN' || connection === 'NONE') {
+			alert('No internet connection detected.' + '\n' + 'This application will not work without internet access');
+		}
+
+		$('#mobile_version').val(device.version);
+		$('#mobile_id').val(device.uuid);
+	}
+
+	function checkConnection() {
+		var networkState            = navigator.network.connection.type;
+		var states                  = {};
+		states[Connection.UNKNOWN]  = 'UNKNOWN';
+		states[Connection.ETHERNET] = 'Ethernet connection';
+		states[Connection.WIFI]     = 'WiFi connection';
+		states[Connection.CELL_2G]  = 'Cell 2G connection';
+		states[Connection.CELL_3G]  = 'Cell 3G connection';
+		states[Connection.CELL_4G]  = 'Cell 4G connection';
+		states[Connection.NONE]     = 'NONE';
+		return states[networkState];
+	}
+</script>
+<script type="text/javascript" charset="utf-8" src="js/jquery-url.js"></script>
+<script type="text/javascript" charset="utf-8" src="js/child.js"></script>
+<script type="text/javascript" charset="utf-8" src="js/idangerous.swiper-1.7.min.js"></script>
+<script type="text/javascript" charset="utf-8" src="js/jquery.mobile/jquery.mobile-1.4.5.min.js"></script>
+</body>
 </html>

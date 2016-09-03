@@ -1,0 +1,32 @@
+<div data-role="page" id="create" class="theme">
+	<div data-role="header" data-position="fixed" data-tap-toggle="false">
+		<a data-rel="back" data-icon="back">Back</a>
+		<h1></h1>
+	</div>
+	<div data-role="content" id="create_account_page">
+		<div class="ui-li ui-li-divider ui-bar-b ui-corner-top">
+			<h2>Create Account</h2>
+		</div>
+		<div class="white_bg ui-btn-up-c">
+			<form action="/" method="post" id="submit_create_user">
+				<input type="hidden" name="mobile_id" id="mobile_id" value="" /> 
+				<input type="hidden" name="mobile_version" id="mobile_version" value="" />
+				<input type="hidden" name="paid" id="paid" value="0" /> 
+				<input type="text" name="display_name" id="display_name" value="" placeholder="Family Name" /> 
+				<input type="email" name="email" id="email" value="" placeholder="Email" /> 
+				<input type="password" name="password" id="password" value="" placeholder="Password (min 4 characters)" /> 
+				<input type="password" name="password_verify" id="password_verify" value="" placeholder="Verify Password" /> 
+				<input type="submit" value="Create Account" data-role="button" />
+			</form>
+		</div>
+		<a href="#form_login_dialog" id="form_dialog" data-rel="popup"></a>
+		<div data-role="popup" id="form_login_dialog" data-overlay-theme="a"
+			data-position-to="window">
+			<div data-role="content" data-theme="c">
+				<pre style="color: red; font-size: 18px"></pre>
+				<a href="#login_page" id="login_page_id" data-role="button" data-rel="back" data-theme="c" >Ok</a>
+			</div>
+		</div>
+	</div>
+	<div data-role="footer" data-position="fixed" data-tap-toggle="false"></div>
+</div>
