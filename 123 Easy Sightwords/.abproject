@@ -2,9 +2,9 @@
   "ProjectName": "123 Easy Sightwords",
   "ProjectGuid": "5b248719-7be5-4d96-820b-ec3012fa85d4",
   "projectVersion": 1,
-  "AppIdentifier": "com.telerik.the123EasySightwords",
+  "AppIdentifier": "com.massinflux.easySightwords",
   "DisplayName": "123 Easy Sightwords",
-  "Author": "",
+  "Author": "Cristi Citea",
   "Description": "123 Easy Sightwords",
   "BundleVersion": "1.0",
   "AndroidVersionCode": "1",
@@ -41,5 +41,6 @@
     "ID_RESOLUTION_WVGA",
     "ID_RESOLUTION_WXGA",
     "ID_RESOLUTION_HD720P"
-  ]
+  ],
+  "iOSDeploymentTarget": "6.0"
 }
