@@ -232,13 +232,18 @@ var CHILD = (function () {
 	CHILD.prototype.parseChild = function () {
 		var _this = this;
 		this.loading({show: 'show', text: '', visibile: false, theme: 'Z', html: ''});
+		
 		this.getChild(function (data) {
 			var html = '<li data-role="list-divider"><h2>Child list</h2></li>';
+			
+			if(data.length === 0) html += '<li class="load_child">No children added.</li>';
+			
 			$.each(data, function (k, v) {
 				window.localStorage.removeItem("child_" + v.kid_id);
 				window.localStorage.setItem("child_" + v.kid_id, JSON.stringify(v));
 				html += '<li class="load_child"><a href="child.html?id=' + v.kid_id + '" data-role="button">' + _this.up(v.name) + ', ' + v.age + '</a></li>';
 			});
+			
 			$("#list_child").append(html).listview("refresh");
 		});
 	};

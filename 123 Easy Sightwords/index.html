@@ -12,8 +12,6 @@
 <body onload="init();" id="stage" class="theme">
 <div data-role="page" id="index">
 	<div class="index_page" style="display:none;">
-		<div data-role="header" data-position="fixed" data-tap-toggle="false"></div>
-		<h1 id="header_title"></h1>
 		<div data-role="content">
 			<div class="banner orange ui-shadow ui-corner-all ui-bar-b">
 				<h3>123 Easy SightWords</h3>
@@ -21,10 +19,6 @@
 			</div>
 			<a href="login.html" data-role="button">Log In</a>
 			<a href="create.html" data-role="button">Create User</a>
-		</div>
-
-		<div data-role="footer" data-position="fixed" data-tap-toggle="false">
-			<h4>&copy; 2013 massinflux.com</h4>
 		</div>
 	</div>
 </div>
@@ -57,7 +51,7 @@
 
 	function onDeviceReady() {
 		var connection = checkConnection();
-		if (connection === 'UNKNOWN' || connection === 'NONE') {
+		if (connection === 'NONE') {
 			alert('No internet connection detected.' + '\n' + 'This application will not work without internet access');
 		}
 
@@ -75,6 +69,7 @@
 		states[Connection.CELL_3G]  = 'Cell 3G connection';
 		states[Connection.CELL_4G]  = 'Cell 4G connection';
 		states[Connection.NONE]     = 'NONE';
+		
 		return states[networkState];
 	}
 </script>
